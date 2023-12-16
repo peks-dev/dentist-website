@@ -1,0 +1,25 @@
+.title {
+  font-family: var(--font-primary);
+  text-transform: capitalize;
+  color: currentColor;
+}
+
+/* modifiers */
+.title--sm {
+  font-size: clamp(1.2rem, 1.7vw, 2rem);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.title--md {
+  font-size: clamp(4rem, 8vw, 9rem);
+}
+.title--lx {
+  font-size: clamp(6rem, 10vw, 12rem);
+}
+
+/* mobile breackpoint*/
+@media (max-width: 600px) {
+  .title--big {
+    font-size: 4rem;
+  }
+}

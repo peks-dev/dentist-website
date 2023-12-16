@@ -1,0 +1,52 @@
+---
+interface Props {
+  modifier?: string;
+  align?: "left" | "center" | "right";
+  isFullScreen?: boolean;
+}
+const { modifier, align, isFullScreen, ...res } = Astro.props;
+---
+
+<section
+  class:list={[modifier, { fullScreen: isFullScreen }]}
+  data-align={align}
+  {...res}
+>
+  <slot />
+</section>
+
+<style>
+  section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5rem;
+  }
+
+  section.fullScreen {
+    min-width: 100%;
+    min-height: 100vh;
+  }
+
+  [data-align="left"] {
+    align-items: start;
+    justify-content: flex-start;
+  }
+  [data-align="center"] {
+    align-items: center;
+    justify-content: center;
+  }
+  [data-align="rigth"] {
+    align-items: end;
+    justify-content: flex-end;
+  }
+
+  /* modifiers*/
+
+  .about {
+    width: 95%;
+    height: 100vh;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+</style>

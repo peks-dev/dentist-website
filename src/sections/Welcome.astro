@@ -1,0 +1,68 @@
+---
+import Section from "../components/Section.astro";
+import Text from "../components/Text.astro";
+---
+
+<Section isFullScreen align="center">
+  <header>
+    <h1 class="title title--lx">consultorio dental <br /> en escarcega</h1>
+    <Text size="lg" modifier="welcome">
+      experimenta la excelencia en
+      <span class="blue-strong">atencion dental</span>
+    </Text>
+    <spline-viewer
+      loading-anim-type="spinner-small-light"
+      url="https://prod.spline.design/rhFuOQtx7D1eS9G4/scene.splinecode"
+      class="spline-scene"></spline-viewer>
+  </header>
+</Section>
+
+<script
+  type="module"
+  src="https://unpkg.com/@splinetool/viewer@0.9.522/build/spline-viewer.js"
+></script>
+
+<style>
+  header {
+    position: relative;
+    align-self: flex-start;
+    width: 95%;
+    height: 75vh;
+    background-color: var(--dark);
+    text-align: center;
+    border-radius: 2rem;
+    color: var(--white);
+    margin-top: calc(var(--nav-height) * 1.5);
+    padding: 0 1.5rem;
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    z-index: 1;
+    overflow-wrap: break-word;
+    overflow: hidden;
+  }
+  header::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.2;
+    z-index: 2;
+  }
+  .spline-scene {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 3;
+  }
+</style>

@@ -1,0 +1,178 @@
+---
+import Text from "../../components/Text.astro";
+import Arrow from "../../components/icons/Arrow.astro";
+import Work from "../../components/icons/stickers/Work.astro";
+---
+
+<section id="testimonios">
+  <header>
+    <h2 class="title title--sm">testimonios</h2>
+    <span class="title title--md">sonrisas renovadas</span>
+    <Text size="md">explora el impacto de nuestras intervenciones</Text>
+    <div class="sticker sticker--work">
+      <Work />
+    </div>
+  </header>
+  <div class="slider">
+    <div class="slider__mask">
+      <div class="slider__mask-before"></div>
+      <nav class="slider__mask-controls">
+        <button class="slider__arrow" type="button" id="prev">
+          <Arrow />
+        </button>
+        <button class="slider__arrow" type="button" id="next">
+          <Arrow />
+        </button>
+      </nav>
+      <div class="slider__mask-after"></div>
+    </div>
+    <ul class="slider__projects">
+      <li class="slider__item">
+        <picture><img src="/assets/slider/antes.png" /></picture>
+        <h3>blanqueamiento</h3>
+        <picture><img src="/assets/slider/despues.png" /></picture>
+      </li>
+      <li class="slider__item">
+        <picture><img src="/assets/slider/antes.png" /></picture>
+        <h3>ortodoncia</h3>
+        <picture><img src="/assets/slider/despues.png" /></picture>
+      </li>
+    </ul>
+  </div>
+</section>
+<script src="./testimonial.js"></script>
+<style>
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 88vh;
+    height: min-content;
+    width: 95%;
+    justify-content: space-around;
+    margin: 0 auto;
+    gap: 3rem;
+  }
+  header {
+    text-align: right;
+    flex: 1 1 35rem;
+    order: 2;
+  }
+  .slider {
+    flex: 0 1 45rem;
+    height: max(50rem, 80vh);
+    overflow: hidden;
+    position: relative;
+  }
+  .slider__mask {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .slider__mask-before,
+  .slider__mask-after {
+    flex: 2 1 auto;
+    border-radius: 2rem;
+    position: relative;
+  }
+  .slider__mask-before::before {
+    content: "antes";
+    top: 0;
+    left: 0;
+  }
+  .slider__mask-after::before {
+    content: "después";
+    bottom: 0;
+    right: 0;
+  }
+  .slider__mask-after::before,
+  .slider__mask-before::before {
+    color: var(--light);
+    outline: 0.5rem solid var(--light);
+    border-radius: 2rem;
+    padding: 0.4rem 0rem;
+    position: absolute;
+    width: max(14rem, 25%);
+    background-color: var(--dark);
+    font-size: 3rem;
+    text-align: center;
+    line-height: normal;
+  }
+  .slider__mask-controls {
+    flex: 1 0 auto;
+    max-height: 7rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+  .slider__arrow {
+    width: clamp(5rem, 20%, 10rem);
+    height: 85%;
+    background-color: var(--white);
+    border-radius: 2rem;
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  .slider__arrow:nth-child(2) {
+    transform: rotate(180deg);
+  }
+  .slider__projects {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.5s ease;
+  }
+  .slider__item {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+  }
+  .slider__item picture {
+    flex: 2 1 auto;
+    border-radius: 2rem;
+    overflow: hidden;
+    height: 100%;
+  }
+  .slider__item picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+  }
+  .slider__item h3 {
+    flex: 1 0 auto;
+    max-height: 7rem;
+    border-radius: 2rem;
+    height: 7rem;
+    text-align: center;
+    background-color: var(--dark);
+    font-size: clamp(2rem, 3.8vw, 2.7rem);
+    color: var(--white);
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    font-family: var(--font-secundary);
+  }
+  @media screen and (max-width: 889px) {
+    header {
+      order: 1;
+    }
+    .slider {
+      order: 2;
+    }
+  }
+</style>

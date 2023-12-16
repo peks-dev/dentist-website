@@ -1,0 +1,52 @@
+---
+import TextWrap from "../TextWrap.astro";
+import Section from "../Section.astro";
+---
+
+<Section modifier="section--center" id="horarios">
+  <TextWrap modifier="text-wrap--center">
+    <h2 class="title">ubicación y horarios</h2>
+    <p>Estamos cerca de ti con un horario flexible</p>
+  </TextWrap>
+  <div class="location-schedules-container">
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.250677628195!2d-90.74135152574371!3d18.607791366505985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85f6f1c5ac8b675f%3A0xdabb17061e8ccde3!2sConsultorio%20Dental%20Acosta!5e0!3m2!1ses-419!2smx!4v1699642359438!5m2!1ses-419!2smx"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <ul class="schedules">
+      <li>Lunes a Viernes 9:00 am - 8:00 pm</li>
+      <li>Sábados 8:00 am - 2:00 pm</li>
+    </ul>
+  </div>
+</Section>
+<style>
+  .location-schedules-container {
+    width: min(80rem, 100%);
+  }
+  .map {
+    width: 100%;
+    height: 30rem;
+    border: 0.5rem solid var(--color-new-2);
+  }
+  .map iframe {
+    width: 100%;
+    height: 100%;
+  }
+  .schedules {
+    width: 85%;
+    background-color: var(--color-new-2);
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+  .schedules li {
+    font-family: "Cabin", sans-serif;
+    font-size: 1.8rem;
+    color: var(--color-white);
+    line-height: normal;
+  }
+</style>

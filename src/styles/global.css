@@ -1,0 +1,36 @@
+:root {
+  --dark: #07bfc1;
+  --light: #c8fffa;
+  --accent: #08177e;
+  --white: #ffffff;
+
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--dark)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+
+  --font-primary: pt_sans;
+  --font-secundary: cabin;
+  font-size: 10px;
+}
+
+.blue-strong {
+  color: var(--accent);
+}
+
+.sticker {
+  width: clamp(8rem, 10vw, 10rem);
+  height: clamp(8rem, 10vw, 10rem);
+  align-self: end;
+}
+.sticker--work {
+  margin: 0 0 0 auto;
+}
+.sticker--about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

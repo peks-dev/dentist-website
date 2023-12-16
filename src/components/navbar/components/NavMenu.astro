@@ -1,0 +1,89 @@
+---
+const variable = "hola";
+---
+
+<nav class="menu">
+  <div class="menu__wrap-triggers">
+    <label class="menu__burger" id="label" for="menu-toggle">
+      <div class="menu__burger-line"></div>
+      <div class="menu__burger-line"></div>
+      <div class="menu__burger-line"></div>
+    </label>
+
+    <button class="menu__btn" type="button">
+      <a href="/">agendar</a>
+    </button>
+  </div>
+
+  <ul class="menu__links">
+    <li><a class="menu__links-item" href="#servicios">servicios</a></li>
+    <li><a class="menu__links-item" href="#nosotros">nosotros</a></li>
+    <li><a class="menu__links-item" href="#testimonios">testimonios</a></li>
+    <li><a class="menu__links-item" href="#faqs">faqs</a></li>
+  </ul>
+</nav>
+
+<style is:global>
+  .menu {
+    background-color: var(--white);
+    border-radius: 1.6rem;
+    width: clamp(11rem, 23vw, 14rem);
+    height: 4.5rem;
+    margin-top: 2.5vh;
+    justify-self: right;
+    align-self: start;
+    margin-right: 5vw;
+    overflow: hidden;
+  }
+
+  .menu__wrap-triggers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 4.5rem;
+  }
+  .menu__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 3rem;
+  }
+  .menu__burger-line {
+    width: 65%;
+    height: 0.3rem;
+    background-color: var(--accent);
+    border-radius: 40rem;
+  }
+  .menu__burger-line:nth-child(2) {
+    width: 80%;
+  }
+  .menu__btn {
+    font-size: clamp(1.2em, 2vw, 1.6em);
+    font-family: var(--font-primary);
+    color: var(--light);
+    background-color: var(--dark);
+    padding: 0.5em 0.6em;
+    border-radius: 1.2rem;
+    text-transform: uppercase;
+  }
+  .menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    transition: height 1s ease;
+  }
+  .menu__links-item {
+    color: var(--accent);
+    font-family: var(--font-primary);
+    font-size: 1.7rem;
+    text-align: center;
+  }
+</style>

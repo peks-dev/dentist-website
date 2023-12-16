@@ -1,0 +1,58 @@
+<script
+  type="module"
+  src="https://unpkg.com/@splinetool/viewer@0.9.499/build/spline-viewer.js"
+></script>
+<section>
+  <div class="wrapper">
+    <h1>Consultorio dental en escarcega</h1>
+    <p>Experimenta la excelencia en atencion dental</p>
+  </div>
+  <div class="tooth-container">
+    <spline-viewer
+      loading-anim-type="spinner-small-light"
+      url="https://prod.spline.design/rhFuOQtx7D1eS9G4/scene.splinecode"
+    ></spline-viewer>
+  </div>
+</section>
+
+<style>
+  section {
+    width: 95%;
+    height: 75vh;
+    min-height: 45rem;
+    background-color: var(--color-new-2);
+    border-radius: 1rem;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    color: var(--color-white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 0;
+    z-index: 10;
+    align-items: center;
+    gap: 1rem;
+  }
+  h1 {
+    width: 90%;
+    color: var(--color-white);
+    font-size: clamp(4rem, 7vw, 7rem);
+  }
+  p {
+    width: 90%;
+  }
+  .tooth-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+</style>

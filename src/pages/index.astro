@@ -1,0 +1,28 @@
+---
+// Components
+import Layout from "../layouts/Layout.astro";
+import Welcome from "../sections/Welcome.astro";
+import Services from "../sections/Services.astro";
+import About from "../sections/About.astro";
+import Testimonial from "../sections/testimonial/Testimonial.astro";
+import Faqs from "../sections/Faqs.astro";
+import Parallax from "../sections/Parallax.astro";
+import Cta from "../sections/Cta.astro";
+---
+
+<Layout title="Consultorio dental Acosta">
+  <Welcome />
+  <Services />
+  <About />
+  <Testimonial />
+  <Faqs />
+  <Parallax />
+  <Cta />
+</Layout>
+
+<style>
+  section {
+    width: 100%;
+    height: 100vh;
+  }
+</style>

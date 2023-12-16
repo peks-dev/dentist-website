@@ -1,0 +1,107 @@
+---
+// components
+import Text from "../components/Text.astro";
+import Card from "../components/Card.astro";
+import Smile from "../components/icons/stickers/Smile.astro";
+
+//svg icons
+import OrtodonciaIcon from "../components/icons/services/OrtodonciaIcon.astro";
+import EndodonciaIcon from "../components/icons/services/EndodonciaIcon.astro";
+import RayosxIcon from "../components/icons/services/RayosxIcon.astro";
+import ResinaIcon from "../components/icons/services/ResinaIcon.astro";
+import ProtesisIcon from "../components/icons/services/ProtesisIcon.astro";
+import ProfilaxisIcon from "../components/icons/services/ProfilaxisIcon.astro";
+---
+
+<section id="servicios">
+  <header>
+    <h2 class="title--sm">servicios dentales</h2>
+    <span class="title title--md">transformando sonrisas</span>
+    <Text size="md">
+      Conoce nuestra gama de tratamientos para tu salud bucal
+    </Text>
+    <div class="sticker sticker--services">
+      <Smile />
+    </div>
+  </header>
+  <ul class="cards-container">
+    <Card
+      title="Ortodoncia"
+      description="Corrige la alineacion dental para una sonrisa perfecta"
+    >
+      <OrtodonciaIcon />
+    </Card>
+    <Card
+      title="rayos X"
+      description="imágenes precisas para diagnósticos efectivos"
+    >
+      <RayosxIcon />
+    </Card>
+    <Card
+      title="endodoncia"
+      description="tratamiento de la pulpa dental y sus enfermedades"
+    >
+      <EndodonciaIcon />
+    </Card>
+    <Card
+      title="resinas"
+      description="reparación de dientes con estética impecable"
+    >
+      <ResinaIcon />
+    </Card>
+    <Card
+      title="protesis"
+      description="sonrisas completas para volver a tener una estetica "
+    >
+      <ProtesisIcon />
+    </Card>
+    <Card
+      title="profilaxis"
+      description="tu sonrisa saludable con limpiezas recurrentes "
+    >
+      <ProfilaxisIcon />
+    </Card>
+  </ul>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    align-items: start;
+  }
+  header {
+    position: sticky;
+    top: calc(var(--nav-height) + 10rem);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 min(50rem, 90%);
+  }
+  header p {
+    width: 85%;
+    margin-left: 15%;
+  }
+  .cards-container {
+    flex: 0 1 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    transform: translateY(5vh);
+  }
+  @media screen and (max-width: 963px) {
+    section {
+      justify-content: center;
+      gap: 10rem;
+    }
+    header {
+      position: relative;
+      width: 100%;
+      top: 0;
+    }
+  }
+</style>

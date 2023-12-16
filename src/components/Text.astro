@@ -1,0 +1,31 @@
+---
+interface Props {
+  modifier?: string;
+  size: "sm" | "md" | "lg";
+}
+const { modifier, size, ...res } = Astro.props;
+---
+
+<p data-size={size} {...res} class={modifier}>
+  <slot />
+</p>
+
+<style>
+  p {
+    line-height: 4rem;
+  }
+  [data-size="sm"] {
+    font-size: clamp(2rem, 2vw, 3rem);
+  }
+  [data-size="md"] {
+    font-size: clamp(2.4rem, 2.4vw, 3.3rem);
+  }
+  [data-size="lg"] {
+    font-size: clamp(2.7rem, 2.7vw, 4rem);
+  }
+
+  .welcome {
+    position: relative;
+    z-index: 3;
+  }
+</style>

@@ -1,0 +1,142 @@
+---
+import Section from "../components/Section.astro";
+import Text from "../components/Text.astro";
+import Arrow2 from "../components/icons/Arrow2.astro";
+import Tooth2 from "../components/icons/Tooth2.astro";
+---
+
+<Section id="faqs">
+  <header>
+    <h2 class="title title--lx">preguntas frecuentes</h2>
+    <!-- <Text size="md">resuelve todas tus dudas</Text> -->
+  </header>
+  <ul class="accordion">
+    <li>
+      <details>
+        <summary
+          >¿Cual es el costo de una consulta inicial?
+          <picture class="icon"><Arrow2 /></picture>
+        </summary>
+        <div class="answer">
+          <div slot="icon" class="tooth">
+            <Tooth2 />
+          </div>
+          <Text size="sm">
+            En nuestro consultorio, ofrecemos consultas iniciales de forma
+            gratuita. Es una oportunidad para conocerte y discutir tus
+            necesidades dentales sin compromiso.
+          </Text>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary
+          >¿Aceptan seguros dentales?
+          <picture class="icon"><Arrow2 /></picture>
+        </summary>
+        <div class="answer">
+          <div slot="icon" class="tooth">
+            <Tooth2 />
+          </div>
+          <Text size="sm">
+            Sí, aceptamos una variedad de seguros dentales. Nuestro equipo te
+            ayudará a entender y utilizar tus beneficios al máximo
+          </Text>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details>
+        <summary
+          >¿Qué debo esperar en mi primer visita?
+          <picture class="icon"><Arrow2 /></picture>
+        </summary>
+        <div class="answer">
+          <div slot="icon" class="tooth">
+            <Tooth2 />
+          </div>
+          <Text size="sm">
+            En tu primera visita, te recibirán con una cálida bienvenida. El
+            dentista realizará un examen oral completo y discutirá cualquier
+            inquietud o tratamiento necesario.
+          </Text>
+        </div>
+      </details>
+    </li>
+  </ul>
+</Section>
+
+<style>
+  header {
+    text-align: center;
+    width: 90%;
+    position: sticky;
+    top: calc(var(--nav-height) - 5px);
+    background: linear-gradient(
+      to bottom,
+      rgba(200, 255, 250, 1),
+      rgba(200, 255, 250, 1),
+      rgba(200, 255, 250, 1),
+      rgba(200, 255, 250, 0)
+    );
+    padding: 0 0 1.5em 0;
+    margin: calc(var(--nav-height) * 1.5) auto 0 auto;
+    z-index: 3;
+  }
+  .accordion {
+    width: min(80rem, 90%);
+    margin: 0 auto calc(var(--nav-height) * 1.5) auto;
+    color: var(--color-new-2);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  details {
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: height 0.4s ease;
+  }
+  details[open] {
+    background-color: var(--white);
+    color: var(--dark);
+  }
+  details[open] .icon {
+    transform: rotate(-90deg);
+  }
+  details summary::-webkit-details-marker {
+    display: none; /* Oculta el marcador específicamente para WebKit (Chrome, Safari) */
+  }
+  summary {
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-family: var(--font-primary);
+    line-height: normal;
+    list-style: none; /* hidde default marker */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6em 1em;
+    color: currentColor;
+    gap: 3rem;
+  }
+  .icon {
+    flex: 0 0 clamp(1.5rem, 2vw, 2.7rem);
+    transition: transform 0.3s ease;
+  }
+
+  .answer {
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+    display: flex;
+    gap: 2rem;
+  }
+  .tooth {
+    flex: 0 0 3vw;
+    height: 2rem;
+  }
+</style>

@@ -13,6 +13,7 @@ const { modifier, size, ...res } = Astro.props;
 <style>
   p {
     line-height: 4rem;
+    text-wrap: pretty;
   }
   [data-size="sm"] {
     font-size: clamp(2rem, 2vw, 3rem);
@@ -27,5 +28,13 @@ const { modifier, size, ...res } = Astro.props;
   .welcome {
     position: relative;
     z-index: 3;
+    text-wrap: balance;
+  }
+  .feature__text {
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+    line-height: 3rem;
+    text-align: center;
+    width: 80%;
+    text-wrap: pretty;
   }
 </style>

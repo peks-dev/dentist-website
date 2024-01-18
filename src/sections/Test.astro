@@ -1,0 +1,110 @@
+---
+import Text from "../components/Text.astro";
+import DocSticker from "../components/icons/stickers/Doc.astro";
+---
+
+<section id="about" class="about-section">
+  <div class="features-container">
+    <ul class="features-texts-wrap">
+      <li class="feature feature--active">
+        <div class="sticker feature__sticker">
+          <DocSticker />
+        </div>
+        <h3 class="feature__title">equipo capacitado</h3>
+        <Text size="md" modifier="feature__text">
+          nuestros dentistas profesionales siempre estan tomando cursos para
+          ayudarte de mejor manera
+        </Text>
+      </li>
+      <li class="feature">
+        <h3 class="feature__title">tecnologia de vanguardia</h3>
+        <Text size="md">este es el parrafo 2</Text>
+      </li>
+    </ul>
+    <div class="features__imgs-wrap">
+      <img
+        class="feature__img feature__img--active"
+        src="/assets/about/personal-dentista-1.jpg"
+      />
+      <img
+        class="feature__img"
+        src="/assets/about/consultorio-dental-escarcega.jpg"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    width: 100%;
+    height: 200vh;
+    position: relative;
+    padding-top: var(--nav-height);
+    background-color: red;
+  }
+  .features-container {
+    position: sticky;
+    top: calc(var(--nav-height) + 50px);
+    width: 90%;
+    max-width: 110rem;
+    height: 35%;
+    margin: 0 auto;
+    background-color: var(--dark);
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 2rem;
+    overflow: auto;
+    margin-bottom: 100px;
+    overflow: hidden;
+  }
+  .features-texts-wrap {
+    flex: 1 1 400px;
+    position: relative;
+    min-height: 25rem;
+  }
+  .feature,
+  .feature__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s linear;
+  }
+  .feature {
+    width: 90%;
+    min-height: 100%;
+    color: var(--light);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  .feature--active {
+    opacity: 1;
+  }
+  .feature__title {
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-family: var(--font-primary);
+    text-align: center;
+  }
+  .features__imgs-wrap {
+    height: 100%;
+    flex: 1 1 400px;
+    position: relative;
+  }
+  .feature__img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .feature__img--active {
+    opacity: 1;
+  }
+  .feature__sticker {
+    align-self: center;
+    width: clamp(5rem, 10vw, 10rem);
+    height: clamp(5rem, 10vw, 10rem);
+  }
+</style>

@@ -3,24 +3,19 @@ import Section from "../components/Section.astro";
 import Text from "../components/Text.astro";
 ---
 
-<Section isFullScreen align="center">
+<Section isFullScreen align="center" id="welcome">
   <header>
-    <h1 class="title title--lx">consultorio dental <br /> en escarcega</h1>
+    <h1 class="title title--lx">consultorio dental <br /> en merida</h1>
     <Text size="lg" modifier="welcome">
       experimenta la excelencia en
       <span class="blue-strong">atencion dental</span>
     </Text>
-    <spline-viewer
-      loading-anim-type="spinner-small-light"
-      url="https://prod.spline.design/rhFuOQtx7D1eS9G4/scene.splinecode"
-      class="spline-scene"></spline-viewer>
+    <iframe
+      class="spline-scene"
+      src="https://my.spline.design/tooth-f47fafbe9346f3e18f5f935f099895a6/"
+    ></iframe>
   </header>
 </Section>
-
-<script
-  type="module"
-  src="https://unpkg.com/@splinetool/viewer@0.9.522/build/spline-viewer.js"
-></script>
 
 <style>
   header {
@@ -37,9 +32,9 @@ import Text from "../components/Text.astro";
     display: grid;
     place-content: center;
     gap: 2rem;
-    z-index: 1;
     overflow-wrap: break-word;
     overflow: hidden;
+    z-index: 1;
   }
   header::after {
     position: absolute;
@@ -59,6 +54,7 @@ import Text from "../components/Text.astro";
     top: 0;
     left: 0;
     z-index: 1;
+    border: 0;
   }
 
   h1 {

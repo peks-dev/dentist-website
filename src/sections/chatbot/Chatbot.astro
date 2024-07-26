@@ -1,0 +1,100 @@
+---
+import Section from "../../components/Section.astro";
+import Text from "../../components/Text.astro";
+---
+
+<Section isFullScreen modifier="chatbot">
+  <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+  <div class="chatbot-container">
+    <header>
+      <h2 class="title title--sm">chat de soporte</h2>
+      <span class="title title--md">resuelve tus dudas</span>
+      <Text size="md">realiza cualquier pregunta sobre el consultorio</Text>
+    </header>
+    <div class="chatbot-wrap">
+      <iframe
+        style="border: none;"
+        srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+          <script>
+            window.botpressWebChat.init({
+                'composerPlaceholder': 'Chat with bot',
+                'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
+                'botName': 'Name',
+                'botId': 'ba57d301-1b37-4aa2-b0bc-4cffc632a9b1',
+                'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
+                'messagingUrl': 'https://messaging.botpress.cloud',
+                'clientId': 'ba57d301-1b37-4aa2-b0bc-4cffc632a9b1',
+                'enableConversationDeletion': true,
+                'showPoweredBy': false,
+                'className': 'webchatIframe',
+                'containerWidth': '100%25',
+                'layoutWidth': '100%25',
+                'hideWidget': true,
+                'showCloseButton': false,
+                'disableAnimations': true,
+                'closeOnEscape': false,
+                'showConversationsButton': false,
+                'enableTranscriptDownload': false,
+                'stylesheet':'https://webchat-styler-css.botpress.app/prod/code/3fcd3e4e-d5bc-4bf5-8699-14b621b3ada2/v31782/style.css'
+                
+            });
+          window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+          </script></body>"
+        width="100%"
+        height="100%"></iframe>
+    </div>
+  </div>
+
+  <div class="rectangle">hola</div>
+</Section>
+
+<style>
+  header {
+    color: var(--white);
+    flex: 1 1 min(35rem, 60%);
+    text-align: right;
+  }
+
+  .chatbot-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    width: 85%;
+    z-index: 2;
+  }
+
+  .chatbot-wrap {
+    height: min(55rem, 60vh);
+    flex: 0 1 min(45rem, 90%);
+    background-color: var(--accent);
+    border-radius: 1.5rem;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 0.8em solid var(--light);
+    outline: 0.5em solid var(--accent);
+  }
+
+  .rectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark);
+    width: 90vw;
+    height: 45vh;
+    border-radius: 1.5rem;
+    z-index: 1;
+  }
+  .chatbot-wrap iframe {
+    height: 100% !important;
+  }
+
+  @media screen and (max-width: 976px) {
+    header {
+      color: var(--dark);
+    }
+  }
+</style>

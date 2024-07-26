@@ -1,0 +1,62 @@
+---
+import Text from "./Text.astro";
+
+interface Props {
+  serviceName: string;
+  pathImgBefore: string;
+  pathImgAfter: string;
+}
+const { serviceName, pathImgBefore, pathImgAfter } = Astro.props;
+---
+
+<div class="slider__item">
+  <picture class="slider__img before">
+    <img src={pathImgBefore} alt="despues del tratamiento" />
+  </picture>
+  <Text size="sm" modifier="slider__text">{serviceName}</Text>
+  <picture class="slider__img after">
+    <img src={pathImgAfter} alt="despues del tratamiento" />
+  </picture>
+</div>
+
+<style>
+  .slider__item {
+    border: solid 0.8em var(--dark);
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 1.2rem;
+    width: min(32rem, 90%);
+    margin-left: 2rem;
+    flex: 0 0 min(27rem, 90vw);
+  }
+
+  .slider__item picture {
+    position: relative;
+    display: inline-block;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 0.3em solid var(--light);
+    height: 15rem;
+    background-color: var(--light);
+  }
+
+  .slider__item picture::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+  }
+
+  .slider__item picture img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider__item p {
+    font-family: var(--font-primary);
+  }
+</style>

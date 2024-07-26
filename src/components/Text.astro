@@ -14,6 +14,10 @@ const { modifier, size, ...res } = Astro.props;
   p {
     line-height: 4rem;
     text-wrap: pretty;
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    white-space: normal;
   }
   [data-size="sm"] {
     font-size: clamp(2rem, 2vw, 3rem);
@@ -36,5 +40,9 @@ const { modifier, size, ...res } = Astro.props;
     text-align: center;
     width: 80%;
     text-wrap: pretty;
+  }
+  .slider__text {
+    text-align: center;
+    text-transform: capitalize;
   }
 </style>

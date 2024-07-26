@@ -2,7 +2,10 @@
   font-family: var(--font-primary);
   text-transform: capitalize;
   color: currentColor;
-  text-wrap: balance;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  white-space: normal;
 }
 
 /* modifiers */
@@ -12,7 +15,7 @@
   color: var(--accent);
 }
 .title--md {
-  font-size: clamp(4rem, 8vw, 9rem);
+  font-size: clamp(3.5rem, 7vw, 8.5rem);
 }
 .title--lx {
   font-size: clamp(6rem, 10vw, 12rem);

@@ -1,0 +1,104 @@
+---
+import Text from "../../components/Text.astro";
+import Work from "../../components/icons/stickers/Work.astro";
+import Section from "../../components/Section.astro";
+import SliderItem from "../../components/SliderItem.astro";
+---
+
+<Section isFullScreen modifier="works">
+  <header>
+    <h2 class="title title--sm">testimonios</h2>
+    <span class="title title--md">sonrisas renovadas</span>
+    <Text size="md">explora el impacto de nuestras intervenciones</Text>
+    <div class="sticker sticker--work">
+      <Work />
+    </div>
+  </header>
+  <div class="slider">
+    <div class="slider__wrap">
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+      <SliderItem
+        serviceName="blanqueamiento"
+        pathImgAfter="https://dental-acosta.netlify.app/assets/slider/antes.png"
+        pathImgBefore="https://dental-acosta.netlify.app/assets/slider/despues.png"
+      />
+    </div>
+  </div>
+</Section>
+
+<style>
+  header {
+    position: relative;
+    text-align: right;
+    padding: min(1.2rem, 2.5vw);
+    width: fit-content;
+    align-self: flex-end;
+  }
+  .slider {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slider__wrap {
+    display: inline-flex;
+    /* width: min-content; */
+    animation: slide 60s linear infinite alternate;
+  }
+  .slider__wrap:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes slide {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(calc(-100% + 100vw));
+    }
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Section from "../../components/Section.astro";
 import Text from "../../components/Text.astro";
+import Loader from "../../components/Loader.astro";
 ---
 
 <Section isFullScreen modifier="chatbot">
@@ -12,6 +13,7 @@ import Text from "../../components/Text.astro";
       <Text size="md">realiza cualquier pregunta sobre el consultorio</Text>
     </header>
     <div class="chatbot-wrap">
+      <Loader />
       <iframe
         style="border: none;"
         srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
@@ -68,6 +70,7 @@ import Text from "../../components/Text.astro";
   }
 
   .chatbot-wrap {
+    position: relative;
     height: min(55rem, 60vh);
     flex: 0 1 min(45rem, 90%);
     background-color: var(--accent);
@@ -90,7 +93,9 @@ import Text from "../../components/Text.astro";
     z-index: 1;
   }
   .chatbot-wrap iframe {
+    position: relative;
     height: 100% !important;
+    z-index: 2;
   }
 
   @media screen and (max-width: 976px) {

@@ -17,9 +17,9 @@ import Text from "../../components/Text.astro";
         srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
           <script>
             window.botpressWebChat.init({
-                'composerPlaceholder': 'Chat with bot',
-                'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
-                'botName': 'Name',
+                'composerPlaceholder': 'escribe tu duda aqui...',
+                'botConversationDescription': 'asistente inteligente',
+                'botName': 'AIDA',
                 'botId': 'ba57d301-1b37-4aa2-b0bc-4cffc632a9b1',
                 'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
                 'messagingUrl': 'https://messaging.botpress.cloud',
@@ -34,8 +34,9 @@ import Text from "../../components/Text.astro";
                 'disableAnimations': true,
                 'closeOnEscape': false,
                 'showConversationsButton': false,
+                'avatarUrl': 'https://cdn.leonardo.ai/users/8d505aa4-7c21-4377-af0e-3413989efa12/generations/558a3330-01ef-4d02-90a0-02af2cbbc5f2/Default_asistente_mujer_para_consultorio_dental_0.jpg',
                 'enableTranscriptDownload': false,
-                'stylesheet':'https://webchat-styler-css.botpress.app/prod/code/3fcd3e4e-d5bc-4bf5-8699-14b621b3ada2/v31782/style.css'
+                'stylesheet':'https://webchat-styler-css.botpress.app/prod/a39a6f86-ddd0-4c5a-900c-3973d19c288e/v18063/style.css'
                 
             });
           window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);

@@ -1,0 +1,25 @@
+---
+interface Props {
+  modifier?: string;
+  id: string;
+}
+const { modifier, id } = Astro.props;
+---
+
+<div class=`button-wrapp ${modifier}`>
+  <button class=`button-container` id={id}>
+    <slot />
+  </button>
+</div>
+<style>
+  .button-wrap {
+    padding: 0.2rem, 0.5rem;
+    background-color: var(--white);
+  }
+  .button-container {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
+</style>
